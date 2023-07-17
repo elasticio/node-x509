@@ -1,33 +1,10 @@
 {
-  "name": "@ghaiklor/x509",
+  "name": "@elastic/x509",
   "version": "1.1.1",
   "description": "Simple X509 certificate parser",
   "main": "index.js",
   "license": "MIT",
-  "homepage": "https://github.com/ghaiklor/node-x509#readme",
   "author": "Colton Baker",
-  "contributors": [
-    {
-      "email": "ghaiklor@gmail.com",
-      "name": "Eugene Obrezkov",
-      "url": "https://ghaiklor.com"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:ghaiklor/node-x509.git"
-  },
-  "bugs": {
-    "email": "ghaiklor@gmail.com",
-    "url": "https://github.com/ghaiklor/node-x509/issues"
-  },
-  "keywords": [
-    "x509",
-    "parser",
-    "openssl",
-    "certificate",
-    "cert"
-  ],
   "files": [
     "include",
     "src",
