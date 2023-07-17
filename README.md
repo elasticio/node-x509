@@ -1,7 +1,5 @@
 # node-x509
 
-[![Build Status](https://travis-ci.com/ghaiklor/node-x509.svg?branch=master)](https://travis-ci.com/ghaiklor/node-x509)
-
 Simple X509 certificate parser.
 This fork provides a compatibility with Node.js versions later than 10.
 The original library seems like stopped being supported.
@@ -23,7 +21,7 @@ The original library seems like stopped being supported.
 From NPM *(recommended)*:
 
 ```shell
-npm install @ghaiklor/x509
+npm install @elasticio/x509
 ```
 
 Building and testing from source:
@@ -38,7 +36,7 @@ npm test
 Reading from a file:
 
 ```js
-const x509 = require('@ghaiklor/x509');
+const x509 = require('@elasticio/x509');
 const issuer = x509.getIssuer(__dirname + '/certs/your.crt');
 ```
 
@@ -46,7 +44,7 @@ Reading from a string:
 
 ```js
 const fs = require('fs');
-const x509 = require('@ghaiklor/x509');
+const x509 = require('@elasticio/x509');
 const issuer = x509.getIssuer(fs.readFileSync('./certs/your.crt').toString());
 ```
 
@@ -61,7 +59,7 @@ const issuer = x509.getIssuer(fs.readFileSync('./certs/your.crt').toString());
 Parse certificate with `x509.parseCert` and return the alternate names.
 
 ```js
-const x509 = require('@ghaiklor/x509');
+const x509 = require('@elasticio/x509');
 const altNames = x509.getAltNames(__dirname + '/certs/nodejitsu.com.crt');
 // altNames = [ '*.nodejitsu.com', 'nodejitsu.com' ]
 ```
@@ -71,7 +69,7 @@ const altNames = x509.getAltNames(__dirname + '/certs/nodejitsu.com.crt');
 Parse certificate with `x509.parseCert` and return the issuer.
 
 ```js
-const x509 = require('@ghaiklor/x509');
+const x509 = require('@elasticio/x509');
 const issuer = x509.getIssuer(__dirname + '/certs/nodejitsu.com.crt');
 // issuer = {
 //   countryName: 'GB',
@@ -87,7 +85,7 @@ const issuer = x509.getIssuer(__dirname + '/certs/nodejitsu.com.crt');
 Parse certificate with `x509.parseCert` and return the subject.
 
 ```js
-const x509 = require('@ghaiklor/x509');
+const x509 = require('@elasticio/x509');
 const subject = x509.getSubject(__dirname + '/certs/nodejitsu.com.crt');
 // subject = {
 //   countryName: 'US',
@@ -106,7 +104,7 @@ const subject = x509.getSubject(__dirname + '/certs/nodejitsu.com.crt');
 Parse subject, issuer, valid before and after date, and alternate names from certificate.
 
 ```js
-const x509 = require('@ghaiklor/x509');
+const x509 = require('@elasticio/x509');
 const cert = x509.parseCert(__dirname + '/certs/nodejitsu.com.crt');
 // cert = {
 //   subject: {
@@ -152,7 +150,7 @@ The error messages are the same returned by `openssl`: [x509_verify_cert_error_s
 As now, this function only accepts absolute paths to existing files as arguments.
 
 ```js
-const x509 = require('@ghaiklor/x509');
+const x509 = require('@elasticio/x509');
 
 x509.verify(
   __dirname + '/certs/user.com.crt',
@@ -166,7 +164,7 @@ x509.verify(
 Checking the date to make sure the certificate is active:
 
 ```js
-const x509 = require('@ghaiklor/x509');
+const x509 = require('@elasticio/x509');
 const cert = x509.parseCert('your_cert.crt');
 const date = new Date();
 
